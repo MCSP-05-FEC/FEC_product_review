@@ -1,0 +1,30 @@
+{
+  "name": "mcsp-full-stack-boilerplate",
+  "version": "1.0.0",
+  "description": "**GOAL**  - Your goal is to eventually comfortable building ANY ExpressJS fullstack application.  - Get practice with seeing it can all come together  - The steps below are guidelines, do what makes sense for you, what you need to focus on  - After doing this a few times, challenge yourself to create your own application without any directions.  - If you feel comfortable with everything, think about adding additional features / CSS",
+  "main": "queries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit ",
+    "start:server": "nodemon server.js",
+    "start:react": "cd frontend && npm start",
+    "build": "cd frontend && npm run build && cd ..",
+    "install-all": "npm install && cd frontend && npm install && cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gSchool/mcsp-full-stack-boilerplate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gSchool/mcsp-full-stack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gSchool/mcsp-full-stack-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-icons": "^3.11.0"
+  },
+  "devDependencies": {}
+}
