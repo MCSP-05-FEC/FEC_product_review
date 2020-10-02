@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './app.css';
-import StarRating from './StarRating';
+import Review from './reviews';
 
-
-function App() {
-  return (
-    <div className="App">
-     <StarRating /> 
+class App extends Component {
+    render() {
+      return (
+        <div className={"App"}>
+      <Review />
     </div>
-  );
+  ) 
+};
 }
 
 export default App;
