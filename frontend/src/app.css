@@ -1,15 +1,44 @@
-.App {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+.title {
+    position: relative;
+    left: 350px;
+    top: 2px;
+    background-color: white;
+} 
+
+.rate {
+position: relative;
+right: 200px;
 }
 
-input[type="radio"] {
-    display: none
+.photo {
+position: relative;
+left: 900px;
+}
+ 
+.comment {
+position: relative;
+top: 170px;
+
+
 }
 
-.star{
-    cursor: pointer;
-    transition: color 200ms;
+.type {
+position: relative;
+top: 200px;
+left: 1500px;
+
+
+
 }
+ 
+ 
+ 
+ .container {
+     position: relative;
+     top: 180px;
+        border: 2px solid #ccc;
+        background-color: #eee;
+        border-radius: 1px;
+        padding: 16px;
+        margin: 10px 0
+      }
