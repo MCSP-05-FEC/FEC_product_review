@@ -21,7 +21,7 @@ image text
 );
 
 -- ADD RECORDS TO YOUR TABLE
-INSERT INTO products( name, product_number, account, rating, comment, image) VALUES ('Lamp', 10, 'sltwtota1995', 4, 'I liked it but little bit pricy in my opinion.', 'https://target.scene7.com/is/image/Target/GUEST_a338d827-65e2-4307-82f0-a1509de86af0?wid=125&fmt=pjpeg');
+INSERT INTO products( name, product_number, account, rating, comment, image) VALUES ('Lamp', 10, 'sltwtota1995', 4, 'I liked it but little bit pricy in my opinion.', 'hi', 'https://target.scene7.com/is/image/Target/GUEST_a338d827-65e2-4307-82f0-a1509de86af0?wid=125&fmt=pjpeg');
 INSERT INTO products( name, product_number, account, rating, comment, image) VALUES ('White Shirt', 11, 'adios2020', 5, 'I love it.', 'https://target.scene7.com/is/image/Target/GUEST_3ea9346a-214b-46fa-8833-9466f7b6e834?fmt=webp&wid=700&qlt=80');
 INSERT INTO products( name, product_number, account, rating, comment, image) VALUES ('Toothbrush', 12, 'ola1993', 5, 'I like how it feels on my teeth and gums.', 'https://smedia.webcollage.net/rwvfp/wc/cp/1547044661342_1b4cb3b6-9bd2-43b9-817e-fdb51d8d84f4/module/colgatethreesixty/_cp/products/1544650829979/tab-29c6775f-a485-4697-b914-af2ed8b6a627/48fc59c1-a01d-4d82-91c1-4f828fc0f291.jpg.w1920.jpg');
 INSERT INTO products( name, product_number, account, rating, comment, image) VALUES ('Xbox', 13, 'Kareem', 5, 'Great system, it was very easy to setup and transfer my old data from old system.', 'https://i.pcmag.com/imagery/reviews/01IC0Vsz5N7nWcYIr69Ri4H-4.1569481393.fit_scale.size_1028x578.jpg');
