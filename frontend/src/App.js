@@ -51,28 +51,28 @@ class App extends Component {
     }else{
       review=
       <Fragment>
-      <h1 className="display">Guest ratings and reviews</h1>
-      <div className="title"> 
-       <h2 className="rate">Average rate: {this.state.info.rating}
-       </h2>
-      <BeautyStars 
-        value={this.state.value}
-        onChange={value => this.setState({ value })}
-      />
-      <Donut 
-      progress={progress} onRender={renderProgress} 
-      />
-  </div>
-  <h3 className="photo">Review photo:
-  <img src={this.state.info.image}></img>
-  </h3>
-  <div className="container">
-    <h1 className="tittle">Reviews </h1>
-  <h3 className="comment">Item name: {this.state.info.name} </h3>
-    <h3>{this.state.info.account}:</h3>
-    <h2>{this.state.info.comment}</h2>
-  </div>
-      <button onClick={ this.handleClick.bind(this) }>Write a review</button>
+        <h1 className="display">Guest ratings and reviews</h1>	        {review}
+        <div className="title"> 	
+         <h2 className="rate">Average rate: {this.state.info.rating}	
+         </h2>	
+        <BeautyStars 	
+          value={this.state.value}	
+          onChange={value => this.setState({ value })}	
+        />	
+        <Donut 	
+        progress={progress} onRender={renderProgress} 	
+        />	
+    </div>	
+    <h3 className="photo">Review photo:	
+    <img src={this.state.info.image}></img>	
+    </h3>	
+    <div className="container">	
+      <h1 className="tittle">Reviews </h1>	
+    <h3 className="comment">Item name: {this.state.info.name} </h3>	
+      <h3>{this.state.info.account}:</h3>	
+      <h2>{this.state.info.comment}</h2>	
+    </div>	
+        <button onClick={ this.handleClick.bind(this) }>Write a review</button>
       </Fragment>
     }
 
