@@ -68,9 +68,9 @@ class App extends Component {
     </h3>	
     <div className="container">	
       <h1 className="tittle">Reviews </h1>	
-    <h3 className="comment">Item name: {this.state.info.name} </h3>	
+    <h3 className="comment">Item name: {this.state.info.name} 
       <h3>{this.state.info.account}:</h3>	
-      <h2>{this.state.info.comment}</h2>	
+      <h2>{this.state.info.comment}</h2>	</h3>	
     </div>	
         <button onClick={ this.handleClick.bind(this) }>Write a review</button>
       </Fragment>
