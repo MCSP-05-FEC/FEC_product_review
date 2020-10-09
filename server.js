@@ -8,27 +8,33 @@ const cors = require("cors");
 
 var body = require('body-parser');
 
-app.use(express.static(path.join(__dirname, "./frontend/build")));
+app.use(express.static(path.join(__dirname, "./frontend/dist")));
 app.use(body.urlencoded({extended: false}));
 app.use(body.json());
 app.use(cors());
 
-app.get("/targets", (req, res) => {
-  // run your query here
-  db.query('SELECT * FROM products', (err, data) => {
-      if(err){
-        console.log(err);
-      } else {
-        // console.log(data);
-        res.send(data);
-      }
-  })
+app.get('/itemreview', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/frontend/dist/bundle.js`))
 });
 
-app.get("/targets/:targets_id", (req, res) => {
+// app.get("/targets", (req, res) => {
+//   // run your query here
+//   db.query('SELECT * FROM products', (err, data) => {
+//       if(err){
+//         console.log(err);
+//       } else {
+//         // console.log(data);
+//         res.send(data);
+//       }
+//   })
+// });
+
+
+app.get("/targets/:name", (req, res) => {
   // run your query here
-  const id=Number(req.params.targets_id);
-  db.query('SELECT * FROM products WHERE id=$1', [id], (err, data) => {
+  let id =req.params.name;
+  console.log(id);
+  db.query('SELECT * FROM products WHERE name=$1', [id], (err, data) => {
       if(err){
         console.log(err);
       } else {

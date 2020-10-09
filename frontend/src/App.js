@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './app.css';
+import React, { Component, Fragment } from 'react';
+
 import BeautyStars from 'beauty-stars';
 import Donut from 'react-svg-donuts';
 
@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
     this.state = {
       data: [],
-      info: {rating: 5},
+      info: null,
       number: {value: 5},
       isLoaded: false,
     }
@@ -17,13 +17,21 @@ class App extends Component {
   
 
   componentDidMount() {
-    fetch('/targets/1')
-    .then(res => {
-      return (res.json());
-     }).then(data => {
-      console.log(data);
-      this.setState({info: data.rows[0]})
-      }); 
+    const buttonElement = document.getElementById('button');
+    const inputBox = document.getElementById('searchbar')
+
+    let self=this;
+    buttonElement.addEventListener('click', function (event){
+      let name= inputBox.value
+      console.log("name")
+      fetch('/targets/'+name)
+      .then(res => {
+        return res.json();
+       }).then(data => {
+        console.log(data.rows[0]);
+        self.setState({info: data.rows[0]})
+        }); 
+    })
   }
 
   handleClick() {
@@ -36,30 +44,46 @@ class App extends Component {
     const progress = 100;
 
     const renderProgress = progress => <strong>{progress}%</strong>;
+
+    let review;
+    if(this.state.info===null){
+      review= <div></div>
+    }else{
+      review=
+      <Fragment>
+      <h1 className="display">Guest ratings and reviews</h1>
+      <div className="title"> 
+       <h2 className="rate">Average rate: {this.state.info.rating}
+       </h2>
+      <BeautyStars 
+        value={this.state.value}
+        onChange={value => this.setState({ value })}
+      />
+      <Donut 
+      progress={progress} onRender={renderProgress} 
+      />
+  </div>
+  <h3 className="photo">Review photo:
+  <img src={this.state.info.image}></img>
+  </h3>
+  <div className="container">
+    <h1 className="tittle">Reviews </h1>
+  <h3 className="comment">Item name: {this.state.info.name} </h3>
+    <h3>{this.state.info.account}:</h3>
+    <h2>{this.state.info.comment}</h2>
+  </div>
+      <button onClick={ this.handleClick.bind(this) }>Write a review</button>
+      </Fragment>
+    }
+
+
+
+
+
+
     return (
       <div className="app">
-        <h1 className="display">Guest ratings and reviews</h1>
-        <div className="title"> 
-         <h2 className="rate">Average rate: {this.state.info.rating}
-         </h2>
-        <BeautyStars 
-          value={this.state.value}
-          onChange={value => this.setState({ value })}
-        />
-        <Donut 
-        progress={progress} onRender={renderProgress} 
-        />
-    </div>
-    <h3 className="photo">Review photo:
-    <img src={this.state.info.image}></img>
-    </h3>
-    <div className="container">
-      <h1 className="tittle">Reviews </h1>
-    <h3 className="comment">Item name: {this.state.info.name} </h3>
-      <h3>{this.state.info.account}:</h3>
-      <h2>{this.state.info.comment}</h2>
-    </div>
-        <button onClick={ this.handleClick.bind(this) }>Write a review</button>
+        {review}
       </div>
     );
     
