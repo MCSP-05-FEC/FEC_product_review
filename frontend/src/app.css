@@ -6,6 +6,7 @@
   background-color: #F1F1F1;
   text-align: center;
   padding: 20px;
+  width: 80%;
 }
 
 .display {
@@ -25,10 +26,20 @@
 
 } 
 
- .photo {
- float: right;
-width: 33.33%;
+img {
+  width: auto; height: auto;
+    right:100%;
+    max-width: 500px;
+    max-height: 500px;
+}
 
+
+.photo {
+position: static;
+top: 20px;
+left: 100px;
+width: 100px;
+height: 100px;
 } 
 
 .rate {
@@ -64,7 +75,7 @@ left: 1500px;
     border: 2px solid #ccc;
     background-color: #eee;
     border-radius: 1px;
-    width: 30%;
+    width: 25%;
     height: 100%;
         padding: 80px;
         margin: 5px 0

@@ -17,7 +17,7 @@ class App extends Component {
   
 
   componentDidMount() {
-    fetch('/targets/1')
+    fetch('/targets/4')
     .then(res => {
       return (res.json());
      }).then(data => {
@@ -49,14 +49,14 @@ class App extends Component {
         <Donut 
         progress={progress} onRender={renderProgress} 
         />
-    </div>
     <h3 className="photo">Review photo:
     <img src={this.state.info.image}></img>
     </h3>
+    </div>
     <div className="container">
       <h1 className="tittle">Reviews </h1>
-    <h3 className="comment">Item name: {this.state.info.name} </h3>
       <h3>{this.state.info.account}:</h3>
+    <h3 className="comment">Item name: {this.state.info.name} </h3>
       <h2>{this.state.info.comment}</h2>
     </div>
         <button onClick={ this.handleClick.bind(this) }>Write a review</button>
